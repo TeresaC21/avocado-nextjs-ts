@@ -1,4 +1,4 @@
-const data: Record<TProductId, TProduct> = {
+const data = {
   '2zd33b8c': {
     name: 'Maluma Hass Avocado',
     id: '2zd33b8c',
