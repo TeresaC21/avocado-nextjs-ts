@@ -7,11 +7,6 @@ const Layout = ({ children }) => {
       <Navbar />
       {children}
       <footer className="container">This is a footer</footer>
-      <style jsx>{`
-        .container {
-          background: salmon;
-        }
-      `}</style>
     </div>
   )
 }
