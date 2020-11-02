@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Navbar from '../components/Navbar/Navbar'
+
+//Components
+import ProductList from './product/ProductList'
 
 const HomePage = () => {
   const [productList, setProductList] = useState([])
@@ -14,10 +16,8 @@ const HomePage = () => {
   }, [])
   return (
     <div>
-      <div>Platzi and Next.js!</div>
-      {productList.map((product) => (
-        <div>{product.name}</div>
-      ))}
+      <div>Avocado Next.js!</div>
+      <ProductList productList={productList} />
     </div>
   )
 }
