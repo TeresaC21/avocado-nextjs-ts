@@ -1,25 +1,15 @@
 import React from 'react'
 
+import Product from './Product'
+
 // Styles
 import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
 
 const ProductList = ({ productList }) => {
   return (
-    <Row>
+    <Row className="justify-content-between">
       {productList.map((product) => (
-        <Col md="6" className="my-3" key={product.id}>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={product.image} />
-            <Card.Body>
-              <Card.Title>{product.name}</Card.Title>
-              <Card.Text>{product.description}</Card.Text>
-              <Button variant="warning">Buy</Button>
-            </Card.Body>
-          </Card>
-        </Col>
+        <Product product={product} key={product.id} />
       ))}
     </Row>
   )
