@@ -9,8 +9,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "type-check": "tsc --noEmit"
+    "start": "next start"
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
