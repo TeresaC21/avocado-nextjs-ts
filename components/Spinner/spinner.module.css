@@ -1,0 +1,18 @@
+.wrapper {
+  background: radial-gradient(
+    ellipse at center,
+    #ffa496 0%,
+    #ff8a78 77%,
+    #ff715b 100%
+  );
+  width: 100%;
+  min-height: 100vh;
+}
+
+.showSpinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 7rem;
+  width: 100%;
+  min-height: 100vh;
+}
