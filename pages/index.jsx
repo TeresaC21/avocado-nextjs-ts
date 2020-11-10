@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import SpinnerAvocado from '@components/Spinner/SpinnerAvocado'
 
 //Components
-import ProductList from './product/ProductList'
+import ProductList from '../components/ProductList/ProductList'
 
 const HomePage = () => {
   const [productList, setProductList] = useState([])
@@ -11,12 +11,13 @@ const HomePage = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch('/api/avo')
-      .then((response) => response.json())
-      .then(({ data, lenght }) => {
-        setProductList(data)
-        setLoading(false)
-      })
+    const api = async () => {
+      const response = await fetch('/api/avo')
+      const { data, lenght } = await response.json()
+      setProductList(data)
+      setLoading(false)
+    }
+    api()
   }, [])
 
   return (

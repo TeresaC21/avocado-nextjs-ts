@@ -11,7 +11,7 @@ import Nav from 'react-bootstrap/Nav'
 
 export default function Navbar() {
   return (
-    <NavbarBt bg="light" variant="light" fixed="top">
+    <NavbarBt bg="light" variant="light">
       <Container style={{ maxWidth: '800px' }}>
         <Link href="/" passHref>
           <Nav.Link style={{ color: 'green' }}>
