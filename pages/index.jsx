@@ -7,7 +7,8 @@ import ProductList from '../components/ProductList/ProductList'
 
 const HomePage = () => {
   const [productList, setProductList] = useState([])
-  const [loading, setLoading] = useState([true])
+  const [loading, setLoading] = useState(true)
+  const [cart, setCart] = useState([])
 
   useEffect(() => {
     setLoading(true)
@@ -20,10 +21,18 @@ const HomePage = () => {
     api()
   }, [])
 
+  const addItem = (quantity, id) => {
+    setCart([...cart, { quantity, id }])
+  }
+
   return (
     <div>
       <div>Avocado Next.js!</div>
-      {loading ? <SpinnerAvocado /> : <ProductList productList={productList} />}
+      {loading ? (
+        <SpinnerAvocado />
+      ) : (
+        <ProductList productList={productList} addItem={addItem} />
+      )}
     </div>
   )
 }
