@@ -15,7 +15,10 @@ const Product = ({ product }) => {
             <Card.Img variant="top" src={product.image} />
             <Card.Body>
               <Card.Title>{product.name}</Card.Title>
-              <Card.Text>{product.description}</Card.Text>
+              <Card.Text>$ {product.price}</Card.Text>
+              <Link href={`/product/${product.id}`}>
+                <Card.Text>More description ...</Card.Text>
+              </Link>
               <Button variant="warning">Buy</Button>
             </Card.Body>
           </Card>
