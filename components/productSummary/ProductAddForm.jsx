@@ -14,7 +14,6 @@ const ProductAddForm = ({ id }) => {
   }
 
   const handleClick = () => {
-    /* console.log('agregadooo') */
     addItem({ quantity, id })
     setQuantity(1)
   }
