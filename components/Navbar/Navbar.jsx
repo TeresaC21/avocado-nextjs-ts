@@ -12,7 +12,7 @@ import Nav from 'react-bootstrap/Nav'
 import Badge from 'react-bootstrap/Badge'
 
 export default function Navbar() {
-  const { /* cartItems */ quantity } = useCart()
+  const { quantity } = useCart() /* cartItems */
 
   return (
     <NavbarBt bg="light" variant="light">
@@ -22,7 +22,7 @@ export default function Navbar() {
             <Avocado /> Avo store
           </Nav.Link>
         </Link>
-        <Link href="/about" passHref>
+        <Link href="/cart" passHref>
           <Nav.Link style={{ color: 'green' }}>
             <ShoppingIcon />
             <Badge variant="primary">{quantity}</Badge>
