@@ -4,8 +4,31 @@ export const CartContext = createContext()
 
 export const CartProvider = (props) => {
   const [cartItems, setCartItems] = useState([])
+  const [quantity, setQuantity] = useState(0)
 
-  return <CartContext.Provider value={{ cartItems, setCartItems }} {...props} />
+  const addItem = (item) => {
+    // setCartItems([...cartItems, item])
+    // Suma la nueva cantidad que se agrega desde el form a la cantidad que tenga en ese momento nuestro state queantity
+    setQuantity(quantity + item.quantity)
+
+    const isEqualThatItem = (element) => element.id === item.id
+    const indexItem = cartItems.findIndex(isEqualThatItem)
+    // Si se encontró el item, se modifica la cantidad y actualiza el state del carrito
+    if (indexItem != -1) {
+      let newItems = cartItems
+      newItems[indexItem].quantity =
+        newItems[indexItem].quantity + item.quantity
+
+      setCartItems(newItems)
+      return
+    }
+    // Si no se encuentra ninguna coincidencia, se agrega un nuevo item a nuestro state del carrito
+    setCartItems([...cartItems, item])
+  }
+
+  return (
+    <CartContext.Provider value={{ cartItems, addItem, quantity }} {...props} />
+  )
 }
 
 export const useCart = () => {

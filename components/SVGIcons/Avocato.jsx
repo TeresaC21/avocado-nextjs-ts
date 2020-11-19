@@ -4,7 +4,7 @@ const Avocato = ({ size = '34px' }) => {
   return (
     <svg
       id="Layer_1"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height={size}
       viewBox="0 0 512 512"
       width={size}
@@ -18,8 +18,8 @@ const Avocato = ({ size = '34px' }) => {
         y1="256"
         y2="256"
       >
-        <stop offset="0" stop-color="#29ce69" />
-        <stop offset="1" stop-color="#73da8c" />
+        <stop offset="0" stopColor="#29ce69" />
+        <stop offset="1" stopColor="#73da8c" />
       </linearGradient>
       <linearGradient
         id="SVGID_2_"
@@ -29,8 +29,8 @@ const Avocato = ({ size = '34px' }) => {
         y1="256"
         y2="256"
       >
-        <stop offset="0" stop-color="#c3e870" />
-        <stop offset="1" stop-color="#d5f991" />
+        <stop offset="0" stopColor="#c3e870" />
+        <stop offset="1" stopColor="#d5f991" />
       </linearGradient>
       <linearGradient
         id="SVGID_3_"
@@ -40,8 +40,8 @@ const Avocato = ({ size = '34px' }) => {
         y1="314.241"
         y2="314.241"
       >
-        <stop offset="0" stop-color="#d97c41" />
-        <stop offset="1" stop-color="#e4996d" />
+        <stop offset="0" stopColor="#d97c41" />
+        <stop offset="1" stopColor="#e4996d" />
       </linearGradient>
       <linearGradient
         id="SVGID_4_"
@@ -51,8 +51,8 @@ const Avocato = ({ size = '34px' }) => {
         y1="256"
         y2="256"
       >
-        <stop offset="0" stop-color="#6b9e4c" />
-        <stop offset="1" stop-color="#7fb762" />
+        <stop offset="0" stopColor="#6b9e4c" />
+        <stop offset="1" stopColor="#7fb762" />
       </linearGradient>
       <path
         d="m491.06 245.079c-21.027-34.425-32.688-80.252-39.147-119.487-7.784-47.282-44.561-81.847-96.802-81.847s-89.018 34.565-96.802 81.847c-6.459 39.235-18.12 85.062-39.147 119.487-45.316 74.19-24.432 223.176 135.949 223.176s181.265-148.986 135.949-223.176z"

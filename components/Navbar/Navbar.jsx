@@ -9,23 +9,23 @@ import ShoppingIcon from '@components/SVGIcons/ShoppingIcon'
 // Styles
 import { Container, Navbar as NavbarBt, Row } from 'react-bootstrap'
 import Nav from 'react-bootstrap/Nav'
+import Badge from 'react-bootstrap/Badge'
 
 export default function Navbar() {
-  const { cartItems } = useCart()
+  const { /* cartItems */ quantity } = useCart()
 
-  console.log(cartItems)
   return (
     <NavbarBt bg="light" variant="light">
       <Container style={{ maxWidth: '800px' }}>
         <Link href="/" passHref>
           <Nav.Link style={{ color: 'green' }}>
-            {' '}
-            <Avocado /> Avo store{' '}
+            <Avocado /> Avo store
           </Nav.Link>
         </Link>
         <Link href="/about" passHref>
           <Nav.Link style={{ color: 'green' }}>
-            <ShoppingIcon />{' '}
+            <ShoppingIcon />
+            <Badge variant="primary">{quantity}</Badge>
           </Nav.Link>
         </Link>
       </Container>
