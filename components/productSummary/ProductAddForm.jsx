@@ -4,7 +4,7 @@ import { useCart } from '../../context/cartContext'
 import InputGroup from 'react-bootstrap/InputGroup'
 import Button from 'react-bootstrap/Button'
 
-const ProductAddForm = ({ id }) => {
+const ProductAddForm = ({ avocado }) => {
   const [quantity, setQuantity] = useState(1)
 
   const { addItem } = useCart()
@@ -14,7 +14,7 @@ const ProductAddForm = ({ id }) => {
   }
 
   const handleClick = () => {
-    addItem({ quantity, id })
+    addItem({ quantity, ...avocado })
     setQuantity(1)
   }
 

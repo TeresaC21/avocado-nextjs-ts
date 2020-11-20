@@ -6,27 +6,43 @@ import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Badge from 'react-bootstrap/Badge'
+import Button from 'react-bootstrap/Button'
 
-const DetailsCart = (/* { avocado } */) => {
-  /* const { name, price, image } = avocado */
-
-  const { quantity } = useCart()
+const DetailsCart = () => {
+  const { quantity, cartItems, removeItem } = useCart()
 
   return (
     <section style={{ paddingTop: '5rem' }}>
-      <Row>
-        <Col sm={4} style={{ paddingLeft: '0px', paddingRight: '0px' }}>
-          <Card.Img variant="top" src="image" /* {image} */ />
-        </Col>
-        <Col sm={8}>
-          <Card.Title className="text-dark">{/* {name} */} Names</Card.Title>
-          <Card.Title>
-            <small className="text-success">
-              {quantity} x $ {/* {price} */}
-            </small>
-          </Card.Title>
-        </Col>
-      </Row>
+      {cartItems.map((avo) => {
+        return (
+          <Row key={avo.id}>
+            <Col sm={3} style={{ paddingLeft: '0px', paddingRight: '0px' }}>
+              <Card.Img
+                style={{ width: '95px', height: '95px' }}
+                variant="top"
+                src={avo.image}
+              />
+            </Col>
+            <Col sm={8}>
+              <Card.Title className="text-dark">{avo.name} Names</Card.Title>
+              <Card.Title>
+                <small className="text-success">
+                  {avo.quantity} x $ {avo.price}
+                </small>
+              </Card.Title>
+              <Card.Title>
+                <small className="text-secondary">More details here...</small>
+              </Card.Title>
+            </Col>
+            <Col sm={1}>
+              <Button variant="outline-danger" onClick={() => removeItem(avo)}>
+                X
+              </Button>
+            </Col>
+          </Row>
+        )
+      })}
+
       <Row>
         <Card
           style={{

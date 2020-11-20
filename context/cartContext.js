@@ -26,8 +26,18 @@ export const CartProvider = (props) => {
     setCartItems([...cartItems, item])
   }
 
+  const removeItem = (avocado) => {
+    setQuantity(quantity - avocado.quantity)
+    let itemsAvo = cartItems
+    itemsAvo = itemsAvo.filter((item) => item.id !== avocado.id)
+    setCartItems(itemsAvo)
+  }
+
   return (
-    <CartContext.Provider value={{ cartItems, addItem, quantity }} {...props} />
+    <CartContext.Provider
+      value={{ cartItems, addItem, quantity, removeItem }}
+      {...props}
+    />
   )
 }
 

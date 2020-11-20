@@ -28,7 +28,7 @@ const ProductSummary = ({ avocado }) => {
             <Button variant="secondary">sku: {sku}</Button>
 
             <Row>
-              <ProductAddForm id={id} />
+              <ProductAddForm avocado={avocado} />
             </Row>
           </Col>
         </Row>
